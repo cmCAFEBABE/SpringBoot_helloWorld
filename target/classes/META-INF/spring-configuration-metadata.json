@@ -1,0 +1,47 @@
+{
+  "groups": [
+    {
+      "name": "chenmin",
+      "type": "hello.Config.MyConfigBean",
+      "sourceType": "hello.Config.MyConfigBean"
+    },
+    {
+      "name": "cm",
+      "type": "hello.Config.ConfigBean",
+      "sourceType": "hello.Config.ConfigBean"
+    }
+  ],
+  "properties": [
+    {
+      "name": "chenmin.bitthday",
+      "type": "java.lang.String",
+      "sourceType": "hello.Config.MyConfigBean"
+    },
+    {
+      "name": "chenmin.name",
+      "type": "java.lang.String",
+      "sourceType": "hello.Config.MyConfigBean"
+    },
+    {
+      "name": "chenmin.total",
+      "type": "java.lang.String",
+      "sourceType": "hello.Config.MyConfigBean"
+    },
+    {
+      "name": "cm.birthday",
+      "type": "java.lang.String",
+      "sourceType": "hello.Config.ConfigBean"
+    },
+    {
+      "name": "cm.name",
+      "type": "java.lang.String",
+      "sourceType": "hello.Config.ConfigBean"
+    },
+    {
+      "name": "cm.total",
+      "type": "java.lang.String",
+      "sourceType": "hello.Config.ConfigBean"
+    }
+  ],
+  "hints": []
+}
