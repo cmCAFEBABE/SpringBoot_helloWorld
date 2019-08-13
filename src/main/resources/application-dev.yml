@@ -1,0 +1,9 @@
+#development environment
+#spring:
+#profiles: dev
+server:
+  port: 8080
+
+spring:
+  profiles:
+    active: devDB

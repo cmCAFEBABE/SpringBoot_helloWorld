@@ -1,0 +1,4 @@
+chenmin:
+    name: chenminconfig
+    birthday: 19950808
+    tatal: ${chenmin.name}++++++++${chenmin.birthday}

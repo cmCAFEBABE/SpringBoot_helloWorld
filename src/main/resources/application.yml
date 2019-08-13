@@ -1,0 +1,10 @@
+cm:
+  name: chenmin
+  birthday: 19950808
+  total: ${cm.name}+++++++++++++++++${cm.birthday}
+
+spring:
+  profiles:
+    active: ttt
+    include: test,devDB
+

@@ -6,17 +6,26 @@
  */
 package hello.Config;
 
+import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
 
 /**
  * @author 陈敏(chenmin5 @ corp.netease.com)
  */
-@Component
+//@ConfigurationProperties(prefix = "random")
+//@PropertySource("classpath:random.properties")
 @Configuration
-@PropertySource(value = "random.properties")
-@ConfigurationProperties(prefix = "random")
+@Component
+@Data
 public class RandomBean {
+    private String secret;
+    private String number;
+    private String bignumber;
+    private String uuid;
+    private String number_less_than_ten;
+    private String number_in_range;
 }

@@ -7,10 +7,14 @@ package hello.helloSpring; /**
 
 import hello.Config.ConfigBean;
 import hello.Config.MyConfigBean;
+import hello.Config.RandomBean;
+import hello.DB.DBConnector;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Random;
 
 /**
  * @author 陈敏(chenmin5 @ corp.netease.com)
@@ -23,10 +27,27 @@ public class UserController {
     @Value(value = "${cm.birthday}")
     private String birthday;
 
+    @Value(value="${random.secret}")
+    private String secret;
+    @Value(value="${random.number}")
+    private String number;
+    @Value(value="${random.bignumber}")
+    private String bignumber;
+    @Value(value="${random.uuid}")
+    private String uuid;
+    @Value(value="${random.number.less.than.ten}")
+    private String ten;
+    @Value(value="${random.number.in.range}")
+    private String range;
+
     @Autowired
     private ConfigBean configBean;
     @Autowired
     private MyConfigBean myConfigBean;
+    @Autowired
+    private DBConnector dbConnector;
+//    @Autowired
+//    private RandomBean random;
 
     @RequestMapping("/hello")
     public String hello() {
@@ -44,6 +65,15 @@ public class UserController {
     }
     @RequestMapping("/hello4")
     public String hello4(){
-        return myConfigBean.getTotal();
+        return myConfigBean.getTotal()+myConfigBean.getName()+myConfigBean.getBirthday();
+    }
+    @RequestMapping("/hello5")
+    public String hello5(){
+            return "secret"+secret+"+"+"number"+number+"bignumber"+bignumber+"uuid"+uuid+"ten"+ten+"range"+range;
+    }
+//        return random.getSecret()+random.getNumber_less_than_ten()+random.getNumber_in_range();
+    @RequestMapping("/DB")
+    public String DB(){
+        return dbConnector.configure();
     }
 }

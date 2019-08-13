@@ -13,7 +13,7 @@
   ],
   "properties": [
     {
-      "name": "chenmin.bitthday",
+      "name": "chenmin.birthday",
       "type": "java.lang.String",
       "sourceType": "hello.Config.MyConfigBean"
     },
