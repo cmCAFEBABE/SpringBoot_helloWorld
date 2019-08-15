@@ -8,3 +8,12 @@ spring:
     active: ttt
     include: test,devDB
 
+#  path: /var/my.log
+logging:
+  config: classpath:logback-spring.xml
+#  file: my.log
+#  level:
+#      hello: trace
+
+
+

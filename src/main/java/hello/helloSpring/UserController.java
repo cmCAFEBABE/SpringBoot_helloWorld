@@ -51,7 +51,7 @@ public class UserController {
 
     @RequestMapping("/hello")
     public String hello() {
-        return "name:" + name + "," + "birthday" + birthday;
+        return "name:" + name + "," + "birthday" + birthday+"test10";
     }
 
     @RequestMapping("/hello2")
