@@ -9,6 +9,8 @@ package hello.Controller;
 
 import hello.Dao.UserBean;
 import hello.JdbcInterface.RowMapper;
+import hello.Service.UserService;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,6 +27,8 @@ import java.util.List;
 public class BDController {
     @Autowired
     private JdbcTemplate jdbcTemplate;
+    @Autowired
+    private UserService userService;
 
     @RequestMapping("/getUserName")
     public String gitUserNameList() {
@@ -35,6 +39,21 @@ public class BDController {
         }
         return userList.get(0);
     }
+    @RequestMapping("/getMyBatiesUserNameList")
+    public String getMyBatiesUserNameList() {
+        return userService.getMyBatiesUserNameList().toString();
+    }
+
+    @RequestMapping("/getUserById")
+    public String getUserById(@Param("id") Integer id) {
+        return userService.getUserById(id).toString();
+    }
+
+    @RequestMapping("/getUser")
+    public String getUser(@Param("id") Integer id) {
+        return userService.getUser(id).toString();
+    }
+
 //    @RequestMapping("/getUserList")
 //    public String gitUserList() {
 //        String sql = "SELECT name FROM user ";
