@@ -13,7 +13,9 @@ import hello.Service.UserService;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.sql.ResultSet;
@@ -53,7 +55,10 @@ public class BDController {
     public String getUser(@Param("id") Integer id) {
         return userService.getUser(id).toString();
     }
-
+    @RequestMapping(value = "/insertUser",method = RequestMethod.POST)
+    public String insertUser(@RequestBody UserBean user){
+        return userService.insertUser(user).toString();
+    }
 //    @RequestMapping("/getUserList")
 //    public String gitUserList() {
 //        String sql = "SELECT name FROM user ";

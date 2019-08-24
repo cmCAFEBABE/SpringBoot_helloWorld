@@ -6,12 +6,14 @@
  */
 package hello.Dao;
 
+import lombok.Builder;
 import lombok.Data;
 
 /**
  * @author 陈敏(chenmin5 @ corp.netease.com)
  */
 @Data
+@Builder
 public class UserBean {
     private Integer id;
     private String name;

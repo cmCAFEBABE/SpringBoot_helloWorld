@@ -27,6 +27,9 @@ public interface UserMapper {
         })
         List<UserBean> getMyBatiesUserNameList();
 
+        @Insert("INSERT INTO user (name,birthday) VALUES (#{name},#{birthday})")
+        Integer insertUser( UserBean user);
+
         /**
          * @Parm id=sdalkfj
          */
@@ -40,6 +43,14 @@ public interface UserMapper {
 
         @SelectProvider(type = LearnSqlBuilder.class, method = "getUser")
         List<UserBean> getUser(@Param("id") int id);
+
+
+        /**
+         *
+         * @return
+         */
+
+
 
         class LearnSqlBuilder {
                 public String getUser(@Param("id") final Integer id) {

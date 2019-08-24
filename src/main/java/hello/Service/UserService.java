@@ -16,6 +16,8 @@ import java.util.List;
 public interface UserService {
     List<UserBean> getMyBatiesUserNameList();
 
+    Integer insertUser(UserBean user);
+
     UserBean getUserById(int id);
     List<UserBean> getUser(int id);
 }

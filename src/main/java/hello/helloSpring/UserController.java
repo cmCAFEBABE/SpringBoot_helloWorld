@@ -9,9 +9,11 @@ import hello.Config.ConfigBean;
 import hello.Config.MyConfigBean;
 import hello.Config.RandomBean;
 import hello.DB.DBConnector;
+import hello.Dao.UserBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Random;
@@ -51,14 +53,12 @@ public class UserController {
 
     @RequestMapping("/hello")
     public String hello() {
-        return "name:" + name + "," + "birthday" + birthday+"test10";
+        return "name11111:" + name + "," + "birthday" + birthday+"陈敏打扫ifUS奥普佛牌";
     }
-
     @RequestMapping("/hello2")
     public String hello2() {
         return "name:" + configBean.getName() + "," + "birthday" + configBean.getName();
     }
-
     @RequestMapping("/hello3")
     public String hello3(){
         return configBean.getTotal();
@@ -76,4 +76,6 @@ public class UserController {
     public String DB(){
         return dbConnector.configure();
     }
+
+
 }
